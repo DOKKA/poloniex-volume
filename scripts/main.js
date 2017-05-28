@@ -30,6 +30,10 @@ function createChart(currencyPair, container, chartData){
                 count: 60,
                 type: 'minute',
                 text: '1H'
+            },{
+                count: 4,
+                type: 'hour',
+                text: '4H'
             }, {
                 count: 1,
                 type: 'day',
