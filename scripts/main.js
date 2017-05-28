@@ -5,7 +5,7 @@ function getChartData(currencyPair){
     var unixTimeNow = Math.floor(Date.now() / 1000);
     //why three days? faster load time!
     var threeDaysAgo = unixTimeNow-3600*24*3;
-    return $.get('https://poloniex.com/public?command=returnChartData&currencyPair=BTC_ETH&start='+threeDaysAgo+'&end=9999999999&period=300').then(function(data){
+    return $.get('https://poloniex.com/public?command=returnChartData&currencyPair='+currencyPair+'&start='+threeDaysAgo+'&end=9999999999&period=300').then(function(data){
         return data.map(function(item){
             //use base volume for comparing other coins
             var volume = Math.round(item.volume * 100) / 100
